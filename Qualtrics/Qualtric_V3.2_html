@@ -1,0 +1,26 @@
+<head>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<div class="text" id="txt">
+        <h6> Headline : ${lm://Field/1}</h6>
+        <h6> Lead : ${lm://Field/2}</h6>
+        <div class="textP">
+        <p> ${lm://Field/3}</p>
+        </div>
+        </div>
+        <div class="container" id="mainParent">
+
+        <div class="box-container rounded" id="main">
+<i class="material-icons instr" type="button">help</i>
+   <h5 class="Disclaim">No Causal Relations so far. Highlight text to add</h5>     </div>
+        <button type="button" id="btnDel" class="btn btn-danger text-white" style="float: right;">Delete</button>
+        <button type="button" id="btnDraw2" hidden="hidden" class="btn btn-info text-white" style="float: left;margin-right:16px">Drawing</button>
+<button type="button" id="btnDraw1" class="btn btn-info text-white" style="float: left;margin-right:16px">Arrow</button>
+        <button type="button" id="btnMerge2" hidden="hidden" class="btn btn-info text-white" style="float: left;">Merging</button>
+<button type="button" id="btnMerge1" class="btn btn-info text-white" style="float: left;">Merge</button>
+<button type="button" id="btnExit" class="btn btn-danger text-white" style="float: right;">Exit</button>
+
+        </div>
+
+</body>
