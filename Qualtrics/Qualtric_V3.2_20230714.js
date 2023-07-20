@@ -4,16 +4,8 @@ let highlightedPhrases = new Array();
 let causalRelationships = new Array();
 let taggedText = "";
 
-Qualtrics.SurveyEngine.addOnload(function()
-{
-	/*Place your JavaScript here to run when the page loads*/
 
-});
-
-
-
-Qualtrics.SurveyEngine.addOnReady(function()
-{
+ document.addEventListener('DOMContentLoaded', function() {
 // Remember when we started
 var startTimer = new Date().getTime();
 var qid = "${lm://Field/4}";
@@ -622,6 +614,7 @@ function exportFinalOutput() {
 
 	var htmlResp = document.getElementById(id_prefix +'main').innerHTML ;
 	// given certain loop, save data
+	/*
 	if (parseInt("${lm://Field/4}")==1){
     Qualtrics.SurveyEngine.setEmbeddedData("highlightedPhrases1", JSON.stringify(highlightedPhrases));
     Qualtrics.SurveyEngine.setEmbeddedData("causalRelationships1", JSON.stringify(causalRelationships));
@@ -695,7 +688,7 @@ function exportFinalOutput() {
 	Qualtrics.SurveyEngine.setEmbeddedData("time10", (endTimer-startTimer));
 		Qualtrics.SurveyEngine.setEmbeddedData("html10", htmlResp);
 	}
-	
+	*/
 	
 	
 	
@@ -764,7 +757,7 @@ jQuery("#CustomNextButton").on('click',function (event) {
 jQuery("#btnExit").on('click',function (event) {
 	
 
-	Qualtrics.SurveyEngine.setEmbeddedData("exit",1);
+	//Qualtrics.SurveyEngine.setEmbeddedData("exit",1);
 	curState = document.getElementById(id_prefix +'main').childElementCount;
 	console.log(curState);
     var boxesConnected = new Set(lines.map(line => line.start.id).concat(lines.map(line => line.end.id)));
@@ -824,8 +817,7 @@ jQuery("#btnExit").on('click',function (event) {
 
 });
 
-Qualtrics.SurveyEngine.addOnUnload(function()
-{
+window.addEventListener('beforeunload', function(event) {
 	/* Q1 Place your JavaScript here to run when the page is unloaded
 	document.removeEventListener('drop',fn_drop, false); */
 	 for (let i=0;i<lines.length;i++)
